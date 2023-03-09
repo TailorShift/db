@@ -1,0 +1,12 @@
+shop_discounts
+flyway_schema_history
+inventory_movements
+return_positions
+receipt_positions
+returns
+receipts
+pos_devices
+employees
+customers
+products
+shops
