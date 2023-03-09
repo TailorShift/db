@@ -5,6 +5,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     services:
       db:
         image: postgres:15
@@ -18,6 +20,7 @@ jobs:
         env:
           POSTGRES_PASSWORD: banana
           POSTGRES_USER: tailorshift
+          POSTGRES_HOST_AUTH_METHOD: trust
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -33,6 +36,15 @@ jobs:
           FLYWAY_LOCATIONS: filesystem:migrations
           FLYWAY_VALIDATE_MIGRATION_NAMING: "true"
         run: flyway migrate
+      - name: Generate schemaspy docs
+        if: github.ref == 'refs/heads/main'
+        run: ./ci/schemaspy.sh
+      - name: Publish to Github Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
       - name: Login to Quay.io
         uses: docker/login-action@v2
         with:
