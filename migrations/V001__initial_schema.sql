@@ -1,3 +1,32 @@
+CREATE TABLE IF NOT EXISTS "products" (
+	"id" BIGINT NOT NULL,
+	"manufacturer" TEXT NOT NULL,
+	"name" TEXT NOT NULL,
+	"code" TEXT NOT NULL,
+	"colors" JSON NOT NULL,
+	"price" MONEY NOT NULL,
+	PRIMARY KEY ("id")
+);
+
+CREATE TABLE IF NOT EXISTS "shops" (
+	"id" BIGINT NOT NULL,
+	"city" TEXT NOT NULL,
+	"postcode" TEXT NOT NULL,
+	"street_1" TEXT NOT NULL,
+	"street_2" TEXT NOT NULL,
+	"iot_certificate" TEXT NOT NULL,
+	PRIMARY KEY ("id")
+);
+
+CREATE TABLE IF NOT EXISTS "shop_discounts" (
+	"id" BIGINT NOT NULL,
+	"shop_id" BIGINT NOT NULL,
+	"product_id" BIGINT NOT NULL,
+	"discount" MONEY NOT NULL,
+	PRIMARY KEY ("id")
+);
+
+
 CREATE TABLE IF NOT EXISTS "customers" (
 	"id" BIGINT NOT NULL,
 	"name" TEXT NOT NULL,
@@ -19,22 +48,6 @@ CREATE TABLE IF NOT EXISTS "employees" (
 	CONSTRAINT "fk_primary_shop_id" FOREIGN KEY ("primay_shop_id") REFERENCES "shops" ("id") ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-CREATE TABLE IF NOT EXISTS "inventory_movements" (
-	"id" BIGINT NOT NULL,
-	"shop_id" BIGINT NOT NULL,
-	"product_id" BIGINT NOT NULL,
-	"size" TEXT NOT NULL,
-	"color" TEXT NOT NULL,
-	"quantity" INTEGER NOT NULL,
-	"receipt_id" BIGINT NULL DEFAULT NULL,
-	"return_id" BIGINT NULL DEFAULT NULL,
-	PRIMARY KEY ("id"),
-	CONSTRAINT "fk_product" FOREIGN KEY ("product_id") REFERENCES "products" ("id") ON UPDATE NO ACTION ON DELETE RESTRICT,
-	CONSTRAINT "fk_receipt" FOREIGN KEY ("receipt_id") REFERENCES "receipts" ("id") ON UPDATE NO ACTION ON DELETE RESTRICT,
-	CONSTRAINT "fk_return" FOREIGN KEY ("return_id") REFERENCES "returns" ("id") ON UPDATE NO ACTION ON DELETE RESTRICT,
-	CONSTRAINT "fk_shop" FOREIGN KEY ("shop_id") REFERENCES "shops" ("id") ON UPDATE NO ACTION ON DELETE RESTRICT
-);
-
 CREATE TABLE IF NOT EXISTS "pos_devices" (
 	"id" BIGINT NOT NULL,
 	"shop_id" BIGINT NOT NULL,
@@ -42,16 +55,6 @@ CREATE TABLE IF NOT EXISTS "pos_devices" (
 	"iot_certificate" TEXT NOT NULL,
 	PRIMARY KEY ("id"),
 	CONSTRAINT "fk_shop" FOREIGN KEY ("shop_id") REFERENCES "shops" ("id") ON UPDATE NO ACTION ON DELETE RESTRICT
-);
-
-CREATE TABLE IF NOT EXISTS "products" (
-	"id" BIGINT NOT NULL,
-	"manufacturer" TEXT NOT NULL,
-	"name" TEXT NOT NULL,
-	"code" TEXT NOT NULL,
-	"colors" JSON NOT NULL,
-	"price" MONEY NOT NULL,
-	PRIMARY KEY ("id")
 );
 
 CREATE TABLE IF NOT EXISTS "receipts" (
@@ -114,20 +117,18 @@ CREATE TABLE IF NOT EXISTS "return_positions" (
 	CONSTRAINT "fk_return" FOREIGN KEY ("return_id") REFERENCES "returns" ("id") ON UPDATE NO ACTION ON DELETE RESTRICT
 );
 
-CREATE TABLE IF NOT EXISTS "shops" (
-	"id" BIGINT NOT NULL,
-	"city" TEXT NOT NULL,
-	"postcode" TEXT NOT NULL,
-	"street_1" TEXT NOT NULL,
-	"street_2" TEXT NOT NULL,
-	"iot_certificate" TEXT NOT NULL,
-	PRIMARY KEY ("id")
-);
-
-CREATE TABLE IF NOT EXISTS "shop_discounts" (
+CREATE TABLE IF NOT EXISTS "inventory_movements" (
 	"id" BIGINT NOT NULL,
 	"shop_id" BIGINT NOT NULL,
 	"product_id" BIGINT NOT NULL,
-	"discount" MONEY NOT NULL,
-	PRIMARY KEY ("id")
+	"size" TEXT NOT NULL,
+	"color" TEXT NOT NULL,
+	"quantity" INTEGER NOT NULL,
+	"receipt_id" BIGINT NULL DEFAULT NULL,
+	"return_id" BIGINT NULL DEFAULT NULL,
+	PRIMARY KEY ("id"),
+	CONSTRAINT "fk_product" FOREIGN KEY ("product_id") REFERENCES "products" ("id") ON UPDATE NO ACTION ON DELETE RESTRICT,
+	CONSTRAINT "fk_receipt" FOREIGN KEY ("receipt_id") REFERENCES "receipts" ("id") ON UPDATE NO ACTION ON DELETE RESTRICT,
+	CONSTRAINT "fk_return" FOREIGN KEY ("return_id") REFERENCES "returns" ("id") ON UPDATE NO ACTION ON DELETE RESTRICT,
+	CONSTRAINT "fk_shop" FOREIGN KEY ("shop_id") REFERENCES "shops" ("id") ON UPDATE NO ACTION ON DELETE RESTRICT
 );
