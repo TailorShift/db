@@ -1,0 +1,46 @@
+name: Build
+on: [push,pull_request]
+env:
+  FLYWAY_VERSION: 9.15.2
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:15
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          POSTGRES_PASSWORD: banana
+          POSTGRES_USER: tailorshift
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install tools
+        run: sudo apt update && sudo apt install -y wget
+      - name: Install flyway
+        run: wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/${FLYWAY_VERSION}/flyway-commandline-${FLYWAY_VERSION}-linux-x64.tar.gz | tar xvz && sudo ln -s `pwd`/flyway-${FLYWAY_VERSION}/flyway /usr/local/bin
+      - name: Run flyway db migrations
+        env:
+          FLYWAY_URL: jdbc:postgresql://localhost/tailorshift
+          FLYWAY_USER: tailorshift
+          FLYWAY_PASSWORD: banana
+          FLYWAY_LOCATIONS: filesystem:migrations
+          FLYWAY_VALIDATE_MIGRATION_NAMING: "true"
+        run: flyway migrate
+      - name: Login to Quay.io
+        uses: docker/login-action@v2
+        with:
+          registry: quay.io
+          username: ${{ secrets.QUAY_USERNAME }}
+          password: ${{ secrets.QUAY_ROBOT_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: quay.io/tailorshift/db:latest
