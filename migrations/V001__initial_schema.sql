@@ -41,11 +41,11 @@ CREATE TABLE IF NOT EXISTS "customers" (
 
 CREATE TABLE IF NOT EXISTS "employees" (
 	"id" BIGINT NOT NULL,
-	"primay_shop_id" BIGINT NOT NULL,
+	"primary_shop_id" BIGINT NOT NULL,
 	"name" TEXT NOT NULL,
 	"card_id" BIGINT NOT NULL,
 	PRIMARY KEY ("id"),
-	CONSTRAINT "fk_primary_shop_id" FOREIGN KEY ("primay_shop_id") REFERENCES "shops" ("id") ON UPDATE NO ACTION ON DELETE NO ACTION
+	CONSTRAINT "fk_primary_shop_id" FOREIGN KEY ("primary_shop_id") REFERENCES "shops" ("id") ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS "pos_devices" (
