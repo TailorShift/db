@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS "shops" (
 	"city" TEXT NOT NULL,
 	"postcode" TEXT NOT NULL,
 	"street_1" TEXT NOT NULL,
-	"street_2" TEXT NOT NULL,
+	"street_2" TEXT,
 	"iot_certificate" TEXT NOT NULL,
 	PRIMARY KEY ("id")
 );
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS "customers" (
 	"name" TEXT NOT NULL,
 	"card_id" BIGINT NOT NULL,
 	"street_1" TEXT NOT NULL,
-	"street_2" TEXT NOT NULL,
+	"street_2" TEXT,
 	"postcode" TEXT NOT NULL,
 	"city" TEXT NOT NULL,
 	"discount" SMALLINT NULL DEFAULT NULL,
