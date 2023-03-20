@@ -22,7 +22,7 @@
             <child column="employee_id" foreignKey="fk_employee" implied="false" onDeleteCascade="false" schema="public" table="receipts"/>
             <child column="employee_id" foreignKey="fk_employee" implied="false" onDeleteCascade="false" schema="public" table="returns"/>
          </column>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="primay_shop_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="primary_shop_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <parent column="id" foreignKey="fk_primary_shop_id" implied="false" onDeleteCascade="false" schema="public" table="shops"/>
          </column>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="name" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
@@ -205,7 +205,7 @@
       </table>
       <table name="shops" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
-            <child column="primay_shop_id" foreignKey="fk_primary_shop_id" implied="false" onDeleteCascade="false" schema="public" table="employees"/>
+            <child column="primary_shop_id" foreignKey="fk_primary_shop_id" implied="false" onDeleteCascade="false" schema="public" table="employees"/>
             <child column="shop_id" foreignKey="fk_shop" implied="false" onDeleteCascade="false" schema="public" table="inventory_movements"/>
             <child column="shop_id" foreignKey="fk_shop" implied="false" onDeleteCascade="false" schema="public" table="pos_devices"/>
             <child column="delivery_shop_id" foreignKey="fk_delivery_shop" implied="false" onDeleteCascade="false" schema="public" table="receipts"/>
