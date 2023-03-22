@@ -4,7 +4,8 @@ CREATE TABLE IF NOT EXISTS "products" (
 	"name" TEXT NOT NULL,
 	"code" TEXT NOT NULL,
 	"colors" JSON NOT NULL,
-	"price" MONEY NOT NULL,
+	"price" NUMERIC(10,2) NOT NULL,
+    "tax_rate" NUMERIC(10,2) NOT NULL,
 	PRIMARY KEY ("id")
 );
 
@@ -22,7 +23,7 @@ CREATE TABLE IF NOT EXISTS "shop_discounts" (
 	"id" BIGINT NOT NULL,
 	"shop_id" BIGINT NOT NULL,
 	"product_id" BIGINT NOT NULL,
-	"discount" MONEY NOT NULL,
+	"discount" NUMERIC(10,2) NOT NULL,
 	PRIMARY KEY ("id")
 );
 
@@ -63,9 +64,9 @@ CREATE TABLE IF NOT EXISTS "receipts" (
 	"pos_device_id" BIGINT NOT NULL,
 	"customer_id" BIGINT NULL DEFAULT NULL,
 	"created_at" TIMESTAMP NOT NULL,
-	"discount_total" MONEY NOT NULL,
-	"tax_total" MONEY NOT NULL,
-	"amount_total" MONEY NOT NULL,
+	"discount_total" NUMERIC(10,2) NOT NULL,
+	"tax_total" NUMERIC(10,2) NOT NULL,
+	"amount_total" NUMERIC(10,2) NOT NULL,
 	"employee_id" BIGINT NOT NULL,
 	"delivery_shop_id" BIGINT NULL DEFAULT NULL,
 	PRIMARY KEY ("id"),
@@ -84,10 +85,10 @@ CREATE TABLE IF NOT EXISTS "receipt_positions" (
 	"size" TEXT NOT NULL,
 	"color" TEXT NOT NULL,
 	"quantity" INTEGER NOT NULL,
-	"price" INTEGER NOT NULL,
+	"price" NUMERIC(10,2) NOT NULL,
 	"discount" INTEGER NOT NULL,
 	"discount_reason" TEXT NULL DEFAULT NULL,
-	"tax_rate" MONEY NOT NULL,
+	"tax_rate" NUMERIC(10,2) NOT NULL,
 	PRIMARY KEY ("id"),
 	CONSTRAINT "fk_product" FOREIGN KEY ("product_id") REFERENCES "products" ("id") ON UPDATE NO ACTION ON DELETE RESTRICT,
 	CONSTRAINT "fk_receipt" FOREIGN KEY ("receipt_id") REFERENCES "receipts" ("id") ON UPDATE NO ACTION ON DELETE RESTRICT
