@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>employees - tailorshift Database</title>
+        <title>employees - tailorshift.public</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
@@ -46,7 +46,7 @@
                 <nav class="navbar navbar-static-top">
                     <div class="container">
                         <div class="navbar-header">
-                            <a href="../index.html" class="navbar-brand"><b>tailorshift</b> Database</a>
+                            <a href="../index.html" class="navbar-brand"><b>tailorshift</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
                         </div>
 
@@ -73,7 +73,7 @@
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>employees</h1><p><span id="recordNumber">0</span> rows</p><br />
+                    <h1>employees</h1><p><span id="recordNumber">-1</span> rows</p><br />
                 </section>
                 <!-- Main content -->
                 <section class="content">
@@ -87,7 +87,13 @@
                             </div>
                         </div>
                         <div class="box-body">
-                            <table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
                                 <thead align='left'>
                                 <tr>
                                     <th>Column</th>
@@ -113,11 +119,13 @@
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                             <tr>
                                                 <td title="receipts.employee_id references employees.id via fk_employee"><a href='receipts.html'>receipts</a><span class='relatedKey'>.employee_id</span></td>
-                                                <td class="constraint detail">fk_employee<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                                <td class="constraint detail">fk_employee</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
                                             <tr>
                                                 <td title="returns.employee_id references employees.id via fk_employee"><a href='returns.html'>returns</a><span class='relatedKey'>.employee_id</span></td>
-                                                <td class="constraint detail">fk_employee<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                                <td class="constraint detail">fk_employee</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -142,7 +150,8 @@
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                             <tr>
                                                 <td title="employees.primary_shop_id references shops.id via fk_primary_shop_id"><a href='shops.html'>shops</a><span class='relatedKey'>.id</span></td>
-                                                <td class="constraint detail">fk_primary_shop_id<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                                <td class="constraint detail">fk_primary_shop_id</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -196,7 +205,13 @@
                             </div>
                         </div>
                         <div class="box-body">
-                            <table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
                                 <thead>
                                 <tr>
                                     <th>Constraint Name</th>
@@ -235,24 +250,24 @@
                                 <div class="tab-content no-padding">
                                     <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="employees.html" target="_top" title="employees" alt="" coords="208,147,528,333">
+<area shape="rect" id="node1" href="employees.html" target="_top" title="employees" alt="" coords="208,147,519,333">
 <area shape="rect" id="node2" href="shops.html" target="_top" title="shops" alt="" coords="5,125,164,243">
-<area shape="rect" id="node3" href="receipts.html" target="_top" title="receipts" alt="" coords="572,5,752,269">
-<area shape="rect" id="node4" href="returns.html" target="_top" title="returns" alt="" coords="796,159,952,393">
+<area shape="rect" id="node3" href="receipts.html" target="_top" title="receipts" alt="" coords="563,5,743,269">
+<area shape="rect" id="node4" href="returns.html" target="_top" title="returns" alt="" coords="787,159,943,393">
 </map>
                                         <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/employees.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
                                     </div>
                                     <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="employees.html" target="_top" title="employees" alt="" coords="208,301,528,487">
-<area shape="rect" id="node2" href="shops.html" target="_top" title="shops" alt="" coords="5,157,164,274">
-<area shape="rect" id="node3" href="inventory_movements.html" target="_top" title="inventory_movements" alt="" coords="1056,21,1313,109">
-<area shape="rect" id="node4" href="receipts.html" target="_top" title="receipts" alt="" coords="572,18,752,282">
-<area shape="rect" id="node5" href="returns.html" target="_top" title="returns" alt="" coords="826,199,982,434">
-<area shape="rect" id="node6" href="pos_devices.html" target="_top" title="pos_devices" alt="" coords="281,195,455,283">
-<area shape="rect" id="node8" href="customers.html" target="_top" title="customers" alt="" coords="285,54,451,142">
-<area shape="rect" id="node7" href="receipt_positions.html" target="_top" title="receipt_positions" alt="" coords="796,94,1012,182">
-<area shape="rect" id="node9" href="return_positions.html" target="_top" title="return_positions" alt="" coords="1079,165,1290,253">
+<area shape="rect" id="node1" href="employees.html" target="_top" title="employees" alt="" coords="175,241,485,428">
+<area shape="rect" id="node2" href="shops.html" target="_top" title="shops" alt="" coords="5,209,131,297">
+<area shape="rect" id="node3" href="inventory_movements.html" target="_top" title="inventory_movements" alt="" coords="977,136,1236,224">
+<area shape="rect" id="node4" href="receipts.html" target="_top" title="receipts" alt="" coords="529,265,673,353">
+<area shape="rect" id="node5" href="returns.html" target="_top" title="returns" alt="" coords="756,138,895,226">
+<area shape="rect" id="node6" href="pos_devices.html" target="_top" title="pos_devices" alt="" coords="243,136,417,224">
+<area shape="rect" id="node8" href="customers.html" target="_top" title="customers" alt="" coords="249,445,411,533">
+<area shape="rect" id="node7" href="receipt_positions.html" target="_top" title="receipt_positions" alt="" coords="717,280,933,368">
+<area shape="rect" id="node9" href="return_positions.html" target="_top" title="return_positions" alt="" coords="1001,260,1212,348">
 </map>
                                         <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/employees.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
                                     </div>
@@ -274,7 +289,7 @@
                         <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
                         <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
                     </div>
-                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.0</a></strong>
                 </div>
                 <!-- /.container -->
             </footer>

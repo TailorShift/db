@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<database name="tailorshift" schema="public" type="PostgreSQL - 15.2 (Debian 15.2-1.pgdg110+1)">
+<?xml version="1.0" encoding="UTF-8"?><database name="tailorshift" schema="public" type="PostgreSQL - 15.2 (Debian 15.2-1.pgdg110+1)">
    <tables>
-      <table name="customers" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="customers" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <child column="customer_id" foreignKey="fk_customer" implied="false" onDeleteCascade="false" schema="public" table="receipts"/>
          </column>
@@ -17,7 +16,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="employees" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="employees" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <child column="employee_id" foreignKey="fk_employee" implied="false" onDeleteCascade="false" schema="public" table="receipts"/>
             <child column="employee_id" foreignKey="fk_employee" implied="false" onDeleteCascade="false" schema="public" table="returns"/>
@@ -32,7 +31,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="flyway_schema_history" numRows="1" remarks="" schema="public" type="TABLE">
+      <table name="flyway_schema_history" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="installed_rank" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="version" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="description" nullable="false" remarks="" size="200" type="varchar" typeCode="12"/>
@@ -51,7 +50,7 @@
             <column ascending="true" name="success"/>
          </index>
       </table>
-      <table name="inventory_movements" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="inventory_movements" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="shop_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <parent column="id" foreignKey="fk_shop" implied="false" onDeleteCascade="false" schema="public" table="shops"/>
@@ -73,7 +72,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="pos_devices" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="pos_devices" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <child column="pos_device_id" foreignKey="fk_pos_device_id" implied="false" onDeleteCascade="false" schema="public" table="receipts"/>
             <child column="pos_device_id" foreignKey="fk_pos_device" implied="false" onDeleteCascade="false" schema="public" table="returns"/>
@@ -88,7 +87,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="products" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="products" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <child column="product_id" foreignKey="fk_product" implied="false" onDeleteCascade="false" schema="public" table="inventory_movements"/>
             <child column="product_id" foreignKey="fk_product" implied="false" onDeleteCascade="false" schema="public" table="receipt_positions"/>
@@ -97,13 +96,14 @@
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="name" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="code" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="colors" nullable="false" remarks="" size="2147483647" type="json" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="price" nullable="false" remarks="" size="2147483647" type="money" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="5" name="price" nullable="false" remarks="" size="10" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="6" name="tax_rate" nullable="false" remarks="" size="10" type="numeric" typeCode="2"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="products_pkey" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="receipt_positions" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="receipt_positions" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <child column="receipt_position_id" foreignKey="fk_receipt_position" implied="false" onDeleteCascade="false" schema="public" table="return_positions"/>
          </column>
@@ -117,16 +117,16 @@
          <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="size" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="color" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="quantity" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="price" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="7" name="price" nullable="false" remarks="" size="10" type="numeric" typeCode="2"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="discount" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="discount_reason" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="tax_rate" nullable="false" remarks="" size="2147483647" type="money" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="10" name="tax_rate" nullable="false" remarks="" size="10" type="numeric" typeCode="2"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="receipt_positions_pkey" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="receipts" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="receipts" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <child column="receipt_id" foreignKey="fk_receipt" implied="false" onDeleteCascade="false" schema="public" table="inventory_movements"/>
             <child column="receipt_id" foreignKey="fk_receipt" implied="false" onDeleteCascade="false" schema="public" table="receipt_positions"/>
@@ -142,9 +142,9 @@
             <parent column="id" foreignKey="fk_customer" implied="false" onDeleteCascade="false" schema="public" table="customers"/>
          </column>
          <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="created_at" nullable="false" remarks="" size="29" type="timestamp" typeCode="93"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="discount_total" nullable="false" remarks="" size="2147483647" type="money" typeCode="8"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="tax_total" nullable="false" remarks="" size="2147483647" type="money" typeCode="8"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="amount_total" nullable="false" remarks="" size="2147483647" type="money" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="5" name="discount_total" nullable="false" remarks="" size="10" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="6" name="tax_total" nullable="false" remarks="" size="10" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="7" name="amount_total" nullable="false" remarks="" size="10" type="numeric" typeCode="2"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="employee_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <parent column="id" foreignKey="fk_employee" implied="false" onDeleteCascade="false" schema="public" table="employees"/>
          </column>
@@ -156,7 +156,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="return_positions" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="return_positions" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="receipt_position_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <parent column="id" foreignKey="fk_receipt_position" implied="false" onDeleteCascade="false" schema="public" table="receipt_positions"/>
@@ -170,7 +170,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="returns" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="returns" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <child column="return_id" foreignKey="fk_return" implied="false" onDeleteCascade="false" schema="public" table="inventory_movements"/>
             <child column="return_id" foreignKey="fk_return" implied="false" onDeleteCascade="false" schema="public" table="return_positions"/>
@@ -193,17 +193,17 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="shop_discounts" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="shop_discounts" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="shop_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="product_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="discount" nullable="false" remarks="" size="2147483647" type="money" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="3" name="discount" nullable="false" remarks="" size="10" type="numeric" typeCode="2"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="shop_discounts_pkey" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="shops" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="shops" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <child column="primary_shop_id" foreignKey="fk_primary_shop_id" implied="false" onDeleteCascade="false" schema="public" table="employees"/>
             <child column="shop_id" foreignKey="fk_shop" implied="false" onDeleteCascade="false" schema="public" table="inventory_movements"/>

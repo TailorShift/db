@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>products - tailorshift Database</title>
+        <title>products - tailorshift.public</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
@@ -46,7 +46,7 @@
                 <nav class="navbar navbar-static-top">
                     <div class="container">
                         <div class="navbar-header">
-                            <a href="../index.html" class="navbar-brand"><b>tailorshift</b> Database</a>
+                            <a href="../index.html" class="navbar-brand"><b>tailorshift</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
                         </div>
 
@@ -73,7 +73,7 @@
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>products</h1><p><span id="recordNumber">0</span> rows</p><br />
+                    <h1>products</h1><p><span id="recordNumber">-1</span> rows</p><br />
                 </section>
                 <!-- Main content -->
                 <section class="content">
@@ -87,7 +87,13 @@
                             </div>
                         </div>
                         <div class="box-body">
-                            <table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
                                 <thead align='left'>
                                 <tr>
                                     <th>Column</th>
@@ -113,11 +119,13 @@
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                             <tr>
                                                 <td title="inventory_movements.product_id references products.id via fk_product"><a href='inventory_movements.html'>inventory_movements</a><span class='relatedKey'>.product_id</span></td>
-                                                <td class="constraint detail">fk_product<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                                <td class="constraint detail">fk_product</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
                                             <tr>
                                                 <td title="receipt_positions.product_id references products.id via fk_product"><a href='receipt_positions.html'>receipt_positions</a><span class='relatedKey'>.product_id</span></td>
-                                                <td class="constraint detail">fk_product<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                                <td class="constraint detail">fk_product</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -197,8 +205,25 @@
                                 </tr>
                                 <tr>
                                     <td><span id="price">price</span></td>
-                                    <td>money</td>
-                                    <td>2147483647</td>
+                                    <td>numeric</td>
+                                    <td>10,2</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="tax_rate">tax_rate</span></td>
+                                    <td>numeric</td>
+                                    <td>10,2</td>
                                     <td title=''></td>
                                     <td title=''></td>
                                     <td>null</td>
@@ -226,7 +251,13 @@
                             </div>
                         </div>
                         <div class="box-body">
-                            <table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
                                 <thead>
                                 <tr>
                                     <th>Constraint Name</th>
@@ -265,21 +296,21 @@
                                 <div class="tab-content no-padding">
                                     <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="inventory_movements.html" target="_top" title="inventory_movements" alt="" coords="372,5,629,240">
-<area shape="rect" id="node2" href="products.html" target="_top" title="products" alt="" coords="5,188,328,433">
-<area shape="rect" id="node3" href="receipt_positions.html" target="_top" title="receipt_positions" alt="" coords="393,257,609,433">
+<area shape="rect" id="node1" href="inventory_movements.html" target="_top" title="inventory_movements" alt="" coords="343,5,601,240">
+<area shape="rect" id="node2" href="products.html" target="_top" title="products" alt="" coords="5,188,299,463">
+<area shape="rect" id="node3" href="receipt_positions.html" target="_top" title="receipt_positions" alt="" coords="364,257,580,433">
 </map>
                                         <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/products.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
                                     </div>
                                     <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="inventory_movements.html" target="_top" title="inventory_movements" alt="" coords="805,36,1063,271">
-<area shape="rect" id="node2" href="products.html" target="_top" title="products" alt="" coords="179,88,501,333">
-<area shape="rect" id="node3" href="receipts.html" target="_top" title="receipts" alt="" coords="266,351,414,439">
-<area shape="rect" id="node4" href="returns.html" target="_top" title="returns" alt="" coords="582,396,725,484">
-<area shape="rect" id="node5" href="shops.html" target="_top" title="shops" alt="" coords="5,351,135,439">
-<area shape="rect" id="node6" href="receipt_positions.html" target="_top" title="receipt_positions" alt="" coords="545,203,761,379">
-<area shape="rect" id="node7" href="return_positions.html" target="_top" title="return_positions" alt="" coords="829,340,1039,428">
+<area shape="rect" id="node1" href="inventory_movements.html" target="_top" title="inventory_movements" alt="" coords="772,33,1031,267">
+<area shape="rect" id="node2" href="products.html" target="_top" title="products" alt="" coords="175,85,468,359">
+<area shape="rect" id="node3" href="receipts.html" target="_top" title="receipts" alt="" coords="249,377,393,465">
+<area shape="rect" id="node4" href="returns.html" target="_top" title="returns" alt="" coords="551,393,689,481">
+<area shape="rect" id="node5" href="shops.html" target="_top" title="shops" alt="" coords="5,377,131,465">
+<area shape="rect" id="node6" href="receipt_positions.html" target="_top" title="receipt_positions" alt="" coords="512,199,728,375">
+<area shape="rect" id="node7" href="return_positions.html" target="_top" title="return_positions" alt="" coords="796,337,1007,425">
 </map>
                                         <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/products.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
                                     </div>
@@ -301,7 +332,7 @@
                         <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
                         <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
                     </div>
-                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.0</a></strong>
                 </div>
                 <!-- /.container -->
             </footer>
