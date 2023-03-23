@@ -4,13 +4,27 @@ INSERT INTO public.shops (id, city, postcode, street_1, street_2, iot_certificat
         (3, 'Hamburg', '20095', 'Jungfernstieg 16-20', 'Passagehof 2', '');
 
 insert into public.pos_devices (id, shop_id, serial, iot_certificate) values
-(1, 1, 'Shop1_dev1', ''),
-(2, 2, 'Shop2_dev1', ''),
-(3, 3, 'Shop3_dev1', '');
-
-insert into public.employees (id, primary_shop_id, name, card_id) values
-    (1, 1, 'Christian Berlin', 1111),
-    (2, 2, 'Jonas München', 2222);
+        (1, 1, 'Shop1_dev1', ''),
+        (2, 2, 'Shop2_dev1', ''),
+        (3, 3, 'Shop3_dev1', '');
+    
+INSERT INTO public.employees (id, primary_shop_id, name, card_id)
+VALUES 
+        (1, 2, 'Anna Schmidt', 1234),
+        (2, 1, 'Max Müller', 5678),
+        (3, 3, 'Sabine Fischer', 9012),
+        (4, 2, 'Markus Wagner', 3456),
+        (5, 1, 'Julia Becker', 7890),
+        (6, 3, 'Tobias Schulz', 2345),
+        (7, 2, 'Laura Berger', 6789),
+        (8, 1, 'Johannes Bauer', 9012),
+        (9, 3, 'Nina Schäfer', 3456),
+        (10, 2, 'Felix Koch', 7890),
+        (11, 1, 'Caroline Lange', 2345),
+        (12, 3, 'Sebastian Braun', 6789),
+        (13, 2, 'Lena Meier', 9012),
+        (14, 1, 'Simon Schmitt', 3456),
+        (15, 3, 'Marie Mayer', 7890);
 
 insert into public.customers (id, name, card_id, street_1, street_2, postcode, city, discount) values
     (1, 'Aron A. Aaronson', 111111, 'Aronsonstr. 123', null, '12345', 'Aronhausen', null),
