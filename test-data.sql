@@ -30,6 +30,47 @@ insert into public.customers (id, name, card_id, street_1, street_2, postcode, c
     (1, 'Aron A. Aaronson', 111111, 'Aronsonstr. 123', null, '12345', 'Aronhausen', null),
     (2, 'Bertha Baumeister', 222222, 'Pankowstr. 8', null, '13021', 'Berlin', 5);
     
+INSERT INTO public.customers (id, name, card_id, street_1, street_2, postcode, city, discount) VALUES
+        (1, 'Hans Müller', 123456, 'Musterstraße 1', NULL, '10115', 'Berlin', 5),
+        (2, 'Anna Schmidt', 234567, 'Lindenstraße 15', NULL, '40233', 'Düsseldorf', 0),
+        (3, 'Maximilian Wagner', 345678, 'Hauptstraße 47', 'Apt 5', '80331', 'München', 10),
+        (4, 'Marie Weber', 456789, 'Schloßstraße 17', NULL, '12163', 'Berlin', 0),
+        (5, 'Felix Schmitz', 567890, 'Bahnhofstraße 2', NULL, '53113', 'Bonn', 0),
+        (6, 'Leonie Schulz', 678901, 'Friedrichstraße 37', NULL, '66111', 'Saarbrücken', 8),
+        (7, 'Sebastian Krause', 789012, 'Heinrich-Heine-Straße 29', NULL, '01067', 'Dresden', 0),
+        (8, 'Julia Lehmann', 890123, 'Königsallee 15', 'Apt 10', '40212', 'Düsseldorf', 0),
+        (9, 'Tobias Maier', 901234, 'Kaiserstraße 21', NULL, '60311', 'Frankfurt am Main', 3),
+        (10, 'Sarah Bauer', 012345, 'Luisenplatz 12', NULL, '64283', 'Darmstadt', 0),
+        (11, 'Sophie Fischer', 123123, 'Münsterstraße 12', NULL, '48155', 'Münster', 0),
+        (12, 'Benjamin Hartmann', 234234, 'Hohenzollernring 16', NULL, '50672', 'Köln', 5),
+        (13, 'Emily Schulz', 345345, 'Maxstraße 7', NULL, '80798', 'München', 0),
+        (14, 'Lukas Berger', 456456, 'Rheinstraße 8', 'Apt 3', '55116', 'Mainz', 3),
+        (15, 'Laura Schröder', 567567, 'Hermannstraße 17', NULL, '12049', 'Berlin', 0),
+        (16, 'Simon Keller', 678678, 'Burgstraße 17', 'Apt 7', '01067', 'Dresden', 0),
+        (17, 'Jana Krause', 789789, 'Albertstraße 25', NULL, '01097', 'Dresden', 10),
+        (18, 'Paula Vogel', 890890, 'Kaiser-Wilhelm-Ring 22', NULL, '50672', 'Köln', 0),
+        (19, 'Robin Braun', 901901, 'Bahnhofstraße 9', NULL, '35037', 'Marburg', 0),
+        (20, 'Sara Schumacher', 012012, 'Rathausplatz 4', NULL, '35390', 'Gießen', 15),
+        (21, 'Melanie Hoffmann', 123321, 'Hohenzollerndamm 11', NULL, '14163', 'Berlin', 0),
+        (22, 'Kevin Werner', 234432, 'Hauptstraße 12', NULL, '85521', 'Ottobrunn', 5),
+        (23, 'Lena Schreiber', 345543, 'Marktstraße 23', NULL, '37073', 'Göttingen', 0),
+        (24, 'David Weber', 456654, 'Wittelsbacherstraße 18', 'Apt 3', '80538', 'München', 3),
+        (25, 'Hannah Schmitt', 567765, 'Nordstraße 2', NULL, '80801', 'München', 0),
+        (26, 'Janina Schröder', 678876, 'Königsallee 60', NULL, '40212', 'Düsseldorf', 0),
+        (27, 'Marco Krause', 789987, 'Bergstraße 11', NULL, '01067', 'Dresden', 0),
+        (28, 'Nina Vogel', 890098, 'Biegenstraße 11', NULL, '35037', 'Marburg', 10),
+        (29, 'Patrick Braun', 901109, 'Lindenstraße 4', NULL, '65189', 'Wiesbaden', 0),
+        (30, 'Vanessa Schumacher', 012210, 'Hauptplatz 2', NULL, '68723', 'Schwetzingen', 0),
+        (31, 'Maximilian Müller', 123456, 'Marienstraße 1', NULL, '70178', 'Stuttgart', 0),
+        (32, 'Julia König', 234567, 'Ludwigstraße 7', NULL, '85049', 'Ingolstadt', 5),
+        (33, 'Tobias Becker', 345678, 'Hohenzollernring 23', NULL, '50672', 'Köln', 0),
+        (34, 'Anna Schuster', 456789, 'Hermannstraße 3', NULL, '76133', 'Karlsruhe', 2),
+        (35, 'Felix Schneider', 567890, 'Schadowstraße 5', NULL, '40212', 'Düsseldorf', 0),
+        (36, 'Sophie Fischer', 678901, 'Hornstraße 23', NULL, '33106', 'Paderborn', 7);
+
+
+
+    
 INSERT INTO public.products (id, manufacturer, name, code, colors, price, tax_rate) VALUES
         (1, 'Nike', 'Sneaker', 1234567890, '["Black", "White"]', 99.99, 19),
         (2, 'Adidas', 'T-Shirt', 2345678901, '["Red"]', 19.99, 19),
