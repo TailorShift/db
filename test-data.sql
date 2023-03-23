@@ -25,10 +25,6 @@ VALUES
         (13, 2, 'Lena Meier', 9012),
         (14, 1, 'Simon Schmitt', 3456),
         (15, 3, 'Marie Mayer', 7890);
-
-insert into public.customers (id, name, card_id, street_1, street_2, postcode, city, discount) values
-    (1, 'Aron A. Aaronson', 111111, 'Aronsonstr. 123', null, '12345', 'Aronhausen', null),
-    (2, 'Bertha Baumeister', 222222, 'Pankowstr. 8', null, '13021', 'Berlin', 5);
     
 INSERT INTO public.customers (id, name, card_id, street_1, street_2, postcode, city, discount) VALUES
         (1, 'Hans Müller', 123456, 'Musterstraße 1', NULL, '10115', 'Berlin', 5),
