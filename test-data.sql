@@ -1,6 +1,7 @@
-insert into public.shops (id, city, postcode, street_1, street_2, iot_certificate) values
-    (1, 'Berlin', '10719', 'Kurfürstendamm 42', null, 'tbd'),
-    (2, 'München', '81739', 'Otto-Hahn-Ring 6', null, 'tbd');
+INSERT INTO public.shops (id, city, postcode, street_1, street_2, iot_certificate) VALUES
+(1, 'Berlin', '10115', 'Alexanderplatz 3', '', ''),
+(2, 'Munich', '80331', 'Marienplatz 22', '', ''),
+(3, 'Hamburg', '20095', 'Jungfernstieg 16-20', 'Passagehof 2', '');
 
 insert into public.pos_devices (id, shop_id, serial, iot_certificate)
 values  (1, 1, 'Shop1_dev1', 'tbd'),
