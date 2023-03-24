@@ -4,9 +4,9 @@ INSERT INTO public.shops (id, city, postcode, street_1, street_2, iot_certificat
         (3, 'Hamburg', '20095', 'Jungfernstieg 16-20', 'Passagehof 2', '');
 
 insert into public.pos_devices (id, shop_id, serial, iot_certificate) values
-        (1, 1, 'Shop1_dev1', ''),
-        (2, 2, 'Shop2_dev1', ''),
-        (3, 3, 'Shop3_dev1', '');
+        (1, 1, 'shop1-dev1', ''),
+        (2, 2, 'shop2-dev1', ''),
+        (3, 3, 'shop3-dev1', '');
     
 INSERT INTO public.employees (id, primary_shop_id, name, card_id)
 VALUES 
