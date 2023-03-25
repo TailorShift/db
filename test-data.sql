@@ -172,6 +172,25 @@ INSERT INTO public.products (id, manufacturer, name, code, colors, price, tax_ra
 insert into public.receipts (id, shop_id, pos_device_id, customer_id, created_at, discount_total, tax_total, amount_total, employee_id, delivery_shop_id) values
     (1, 1, 1, null, '2023-03-20 15:34:28.000000', '0.00', '0.00', '24.99', 1, null);
 
-insert into public.receipt_positions (id, receipt_id, position, product_id, size, color, quantity, price, discount, discount_reason, tax_rate) values
-    (101, 1, 1, 2, 'M', 'rainbow', 1, '24.99', 0, null, '19.00');
+INSERT INTO public.receipt_positions (receipt_id, position, product_id, size, color, quantity, price, discount, discount_reason, tax_rate) VALUES 
+        (1, 1, 10, 'M',Navy, 2,299.98, 0, NULL, 19),
+        (1, 2, 45, 'L',Black, 1,89.99, 0, NULL, 19),
+        (2, 1, 88, 'S',Blue, 1,99.99, 5, 'Seasonal Sale', 19),
+        (3, 1, 32, 'XL',Black, 1,39.99, 0, NULL, 19),
+        (3, 2, 10, 'M',Navy, 1,149.99, 0, NULL, 19),
+        (3, 3, 55, 'S',White, 1,149.99, 0, NULL, 19),
+        (4, 1, 20, 'L',Red, 3,47.97, 0, NULL, 19),
+        (4, 2, 50, 'M',Red, 1,19.99, 0, NULL, 19),
+        (4, 3, 75, 'S',Blue, 2,79.98, 0, NULL, 19),
+        (4, 4, 90, 'XL',Green, 1,69.99, 0, NULL, 19),
+        (5, 1, 60, 'M',Grey, 1,189.99, 0, NULL, 19),
+        (5, 2, 80, 'L',Black, 1,79.99, 0, NULL, 19),
+        (6, 1, 15, 'S',Red, 1,229.99, 10, 'Customer Loyalty', 19),
+        (7, 1, 95, 'XL',Red, 1,119.99, 0, NULL, 19),
+        (8, 1, 65, 'M',White, 2,49.98, 0, NULL, 19),
+        (8, 2, 40, 'L',Red, 1,119.99, 0, NULL, 19),
+        (9, 1, 5, 'S',White, 1,39.99, 0, NULL, 19),
+        (10, 1, 70, 'L',Black, 1,99.99, 0, NULL, 19),
+        (11, 1, 25, 'M',Red, 1,189.99, 0, NULL, 19),
+        (11, 2, 35, 'S',Black, 1,109.99, 0, NULL, 19);
 
