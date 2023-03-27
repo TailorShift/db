@@ -1,3 +1,4 @@
+DELETE FROM public.inventory_movements;
 DELETE FROM public.receipt_positions;
 DELETE FROM public.receipts;
 DELETE FROM public.products;
