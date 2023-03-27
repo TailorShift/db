@@ -8,5 +8,6 @@ returns
 receipt_positions
 return_positions
 inventory_movements
+debezium_receipt_export
 flyway_schema_history
 shop_discounts

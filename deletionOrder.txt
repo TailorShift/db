@@ -1,5 +1,6 @@
 shop_discounts
 flyway_schema_history
+debezium_receipt_export
 inventory_movements
 return_positions
 receipt_positions
