@@ -7055,3 +7055,16 @@ INSERT INTO public.receipt_positions (receipt_id, position, product_id, size, co
  (1533, 7, 161, 'S', 'Yellow', 2, 319.98, 15, 'Customer Loyalty', 19),
  (1533, 8, 69, 'S', 'Blue', 1, 69.99, 5, 'End of Season Clearance', 19);
 
+INSERT INTO "public"."inventory_movements" ("id", "shop_id", "product_id", "size", "color", "quantity") VALUES
+    (1, 2, 1, 'S', 'Black', 5),
+    (2, 1, 1, 'S', 'Black', 5),
+    (3, 1, 1, 'S', 'White', 3),
+    (4, 1, 1, 'M', 'Black', 4),
+    (5, 1, 1, 'S', 'White', 8),
+    (6, 1, 1, 'L', 'White', 3),
+    (7, 1, 1, 'L', 'Black', 3),
+    (8, 2, 2, 'S', 'Red', 5),
+    (9, 1, 2, 'S', 'Red', 5),
+    (10, 1, 2, 'S', 'Red', 3),
+    (11, 2, 2, 'M', 'Red', 4),
+    (12, 2, 2, 'M', 'Red', 8);
