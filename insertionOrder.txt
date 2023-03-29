@@ -6,8 +6,8 @@ pos_devices
 receipts
 returns
 receipt_positions
-Daily_Forecast
-Weekly_Forecast
+daily_forecast
+weekly_forecast
 return_positions
 inventory_movements
 debezium_receipt_export

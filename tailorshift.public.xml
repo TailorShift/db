@@ -16,7 +16,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="Daily_Forecast" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="daily_forecast" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="product_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <parent column="id" foreignKey="fk_product" implied="false" onDeleteCascade="false" schema="public" table="products"/>
@@ -27,7 +27,7 @@
          <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="day_of_week" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="predicted_quantity" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="Daily_Forecast_pkey" unique="true">
+         <index name="daily_forecast_pkey" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
@@ -113,10 +113,10 @@
       </table>
       <table name="products" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
-            <child column="product_id" foreignKey="fk_product" implied="false" onDeleteCascade="false" schema="public" table="Daily_Forecast"/>
+            <child column="product_id" foreignKey="fk_product" implied="false" onDeleteCascade="false" schema="public" table="daily_forecast"/>
             <child column="product_id" foreignKey="fk_product" implied="false" onDeleteCascade="false" schema="public" table="inventory_movements"/>
             <child column="product_id" foreignKey="fk_product" implied="false" onDeleteCascade="false" schema="public" table="receipt_positions"/>
-            <child column="product_id" foreignKey="fk_product" implied="false" onDeleteCascade="false" schema="public" table="Weekly_Forecast"/>
+            <child column="product_id" foreignKey="fk_product" implied="false" onDeleteCascade="false" schema="public" table="weekly_forecast"/>
          </column>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="manufacturer" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="name" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
@@ -248,14 +248,14 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="Weekly_Forecast" numRows="0" remarks="" schema="public" type="TABLE">
+      <table name="weekly_forecast" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="product_id" nullable="false" remarks="" size="19" type="int8" typeCode="-5">
             <parent column="id" foreignKey="fk_product" implied="false" onDeleteCascade="false" schema="public" table="products"/>
          </column>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="predicted_quantity" nullable="false" remarks="" size="19" type="int8" typeCode="-5"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="Weekly_Forecast_pkey" unique="true">
+         <index name="weekly_forecast_pkey" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
