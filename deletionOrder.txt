@@ -3,6 +3,8 @@ flyway_schema_history
 debezium_receipt_export
 inventory_movements
 return_positions
+Weekly_Forecast
+Daily_Forecast
 receipt_positions
 returns
 receipts

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>products - tailorshift.public</title>
+        <title>Daily_Forecast - tailorshift.public</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
@@ -73,7 +73,7 @@
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>products</h1><p><span id="recordNumber">-1</span> rows</p><br />
+                    <h1>Daily_Forecast</h1><p><span id="recordNumber">0</span> rows</p><br />
                 </section>
                 <!-- Main content -->
                 <section class="content">
@@ -117,38 +117,40 @@
                                     <td>null</td>
                                     <td>
                                         <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="product_id">product_id</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
                                             <tr>
-                                                <td title="Daily_Forecast.product_id references products.id via fk_product"><a href='Daily_Forecast.html'>Daily_Forecast</a><span class='relatedKey'>.product_id</span></td>
+                                                <td title="Daily_Forecast.product_id references products.id via fk_product"><a href='products.html'>products</a><span class='relatedKey'>.id</span></td>
                                                 <td class="constraint detail">fk_product</td>
                                                 <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
-                                            <tr>
-                                                <td title="inventory_movements.product_id references products.id via fk_product"><a href='inventory_movements.html'>inventory_movements</a><span class='relatedKey'>.product_id</span></td>
-                                                <td class="constraint detail">fk_product</td>
-                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td title="receipt_positions.product_id references products.id via fk_product"><a href='receipt_positions.html'>receipt_positions</a><span class='relatedKey'>.product_id</span></td>
-                                                <td class="constraint detail">fk_product</td>
-                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td title="Weekly_Forecast.product_id references products.id via fk_product"><a href='Weekly_Forecast.html'>Weekly_Forecast</a><span class='relatedKey'>.product_id</span></td>
-                                                <td class="constraint detail">fk_product</td>
-                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td>
-                                        <table border='0' cellspacing='0' cellpadding='0'>
                                         </table>
                                     </td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td><span id="manufacturer">manufacturer</span></td>
-                                    <td>text</td>
-                                    <td>2147483647</td>
+                                    <td><span id="year">year</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
                                     <td title=''></td>
                                     <td title=''></td>
                                     <td>null</td>
@@ -163,9 +165,9 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td><span id="name">name</span></td>
-                                    <td>text</td>
-                                    <td>2147483647</td>
+                                    <td><span id="month">month</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
                                     <td title=''></td>
                                     <td title=''></td>
                                     <td>null</td>
@@ -180,9 +182,9 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td><span id="code">code</span></td>
-                                    <td>text</td>
-                                    <td>2147483647</td>
+                                    <td><span id="day">day</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
                                     <td title=''></td>
                                     <td title=''></td>
                                     <td>null</td>
@@ -197,9 +199,9 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td><span id="colors">colors</span></td>
-                                    <td>json</td>
-                                    <td>2147483647</td>
+                                    <td><span id="day_of_week">day_of_week</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
                                     <td title=''></td>
                                     <td title=''></td>
                                     <td>null</td>
@@ -214,26 +216,9 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td><span id="price">price</span></td>
-                                    <td>numeric</td>
-                                    <td>10,2</td>
-                                    <td title=''></td>
-                                    <td title=''></td>
-                                    <td>null</td>
-                                    <td>
-                                        <table border='0' cellspacing='0' cellpadding='0'>
-                                        </table>
-                                    </td>
-                                    <td>
-                                        <table border='0' cellspacing='0' cellpadding='0'>
-                                        </table>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td><span id="tax_rate">tax_rate</span></td>
-                                    <td>numeric</td>
-                                    <td>10,2</td>
+                                    <td><span id="predicted_quantity">predicted_quantity</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
                                     <td title=''></td>
                                     <td title=''></td>
                                     <td>null</td>
@@ -278,7 +263,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> products_pkey</td>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> Daily_Forecast_pkey</td>
                                     <td>Primary key</td>
                                     <td><span title='Ascending'>Asc</span></td>
                                     <td>id</td>
@@ -306,27 +291,20 @@
                                 <div class="tab-content no-padding">
                                     <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="Daily_Forecast.html" target="_top" title="Daily_Forecast" alt="" coords="372,5,572,152">
-<area shape="rect" id="node2" href="products.html" target="_top" title="products" alt="" coords="5,352,299,627">
-<area shape="rect" id="node3" href="inventory_movements.html" target="_top" title="inventory_movements" alt="" coords="343,169,601,404">
-<area shape="rect" id="node4" href="receipt_positions.html" target="_top" title="receipt_positions" alt="" coords="364,421,580,597">
-<area shape="rect" id="node5" href="Weekly_Forecast.html" target="_top" title="Weekly_Forecast" alt="" coords="366,615,578,761">
+<area shape="rect" id="node1" href="Daily_Forecast.html" target="_top" title="Daily_Forecast" alt="" coords="209,5,476,280">
+<area shape="rect" id="node2" href="products.html" target="_top" title="products" alt="" coords="5,37,165,155">
 </map>
-                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/products.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/Daily_Forecast.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
                                     </div>
                                     <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
                                         <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="Daily_Forecast.html" target="_top" title="Daily_Forecast" alt="" coords="520,49,720,195">
-<area shape="rect" id="node2" href="products.html" target="_top" title="products" alt="" coords="175,239,468,514">
-<area shape="rect" id="node3" href="inventory_movements.html" target="_top" title="inventory_movements" alt="" coords="772,282,1031,517">
-<area shape="rect" id="node4" href="receipts.html" target="_top" title="receipts" alt="" coords="249,531,393,619">
-<area shape="rect" id="node5" href="returns.html" target="_top" title="returns" alt="" coords="551,642,689,730">
-<area shape="rect" id="node6" href="shops.html" target="_top" title="shops" alt="" coords="5,531,131,619">
-<area shape="rect" id="node7" href="receipt_positions.html" target="_top" title="receipt_positions" alt="" coords="512,449,728,625">
-<area shape="rect" id="node8" href="return_positions.html" target="_top" title="return_positions" alt="" coords="796,586,1007,674">
-<area shape="rect" id="node9" href="Weekly_Forecast.html" target="_top" title="Weekly_Forecast" alt="" coords="514,213,726,359">
+<area shape="rect" id="node1" href="Daily_Forecast.html" target="_top" title="Daily_Forecast" alt="" coords="209,5,476,280">
+<area shape="rect" id="node2" href="products.html" target="_top" title="products" alt="" coords="5,348,165,465">
+<area shape="rect" id="node3" href="inventory_movements.html" target="_top" title="inventory_movements" alt="" coords="213,297,472,385">
+<area shape="rect" id="node4" href="receipt_positions.html" target="_top" title="receipt_positions" alt="" coords="235,403,451,491">
+<area shape="rect" id="node5" href="Weekly_Forecast.html" target="_top" title="Weekly_Forecast" alt="" coords="237,508,449,596">
 </map>
-                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/products.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/Daily_Forecast.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
                                     </div>
                                 </div>
                             </div>
