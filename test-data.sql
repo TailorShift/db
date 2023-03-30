@@ -7,7 +7,8 @@ insert into public.pos_devices (id, shop_id, serial, iot_certificate) values
         (1, 1, 'shop1-dev1', ''),
         (2, 2, 'shop2-dev1', ''),
         (3, 3, 'shop3-dev1', '');
-    
+        (4, 1, '86d33b25-aeac-459a-8866-f3c5f0e0741b', ''); -- uuid from the actual image build
+
 INSERT INTO public.employees (id, primary_shop_id, name, card_id)
 VALUES 
         (1, 2, 'Anna Schmidt', 1234),
